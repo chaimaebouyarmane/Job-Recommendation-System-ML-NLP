@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+    .js-fullheight {
+        background-image: none !important; /* Supprimer l'image d'arrière-plan, si définie */
+        height: auto !important;
+    }
+</style>
+
+
+<h2 class="heading-section">Offres Recommandées</h2>
+<ul>
+    {% for recommendation in recommendations %}
+        <li>
+            <a href="{{ recommendation.lienOffre }}">{{ recommendation.lienOffre }}</a>
+        </li>
+        <hr> <!-- Ajoute une ligne horizontale après chaque recommandation -->
+    {% endfor %}
+</ul>
+{% endblock %}

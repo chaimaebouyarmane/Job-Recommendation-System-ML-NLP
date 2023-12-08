@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+  .js-fullheight {
+      background-image: none !important; /* Supprimer l'image d'arrière-plan, si définie */
+  }
+</style>
+    <div class="top-right">
+  <h2 class="heading-section">Telecharger votre CV</h2>
+  <hr>
+  <form action="{{ url_for('process_uploaded_cv') }}" class="signin-form" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="pdfFile" class="form-control">Sélectionnez un CV :</label>
+      <input type="file" name="pdfFile" id="pdfFile" accept=".pdf" required>
+    </div>
+    <div class="d-flex">
+      <button type="submit" class="form-control btn btn-primary submit px-3">Envoyer</button>
+    </div>
+  </form>
+{% endblock %}

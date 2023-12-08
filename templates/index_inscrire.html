@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+                    <form action="{{ url_for('signup') }}" method="POST" class="signin-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="prenom" placeholder="Prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nom" placeholder="Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Mot de passe" required>
+                        </div>
+                        <div class="d-flex">
+                            <button type="submit" class="form-control btn btn-primary submit px-3"> s'inscrire</button>
+                        </div>
+                        <div id="error-message">
+                            {% if error_message %}
+                                <p>{{ error_message }}</p>
+                            {% endif %}
+                        </div>
+                    </form>
+{% endblock %}

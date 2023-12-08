@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %} Resume Matcher {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .centered-graph {
+            max-width: 80%; /* Vous pouvez ajuster la taille ici */
+            margin: 0 auto;
+            display: block;
+        }
+        .graph-container {
+            text-align: center;
+        }
+        .graph-title {
+            font-family: 'Lato', sans-serif; /* Choisissez la police appropriée */
+            font-size: 24px; /* Ajustez la taille du texte */
+            color: #333; /* Choisissez la couleur de texte appropriée */
+            margin-top: 10px; /* Ajustez la marge supérieure selon vos besoins */
+        }
+    </style>
+</head>
+<body class="img js-fullheight" style="background-image: url(./static/images/p.jpg)">
+    {% if request.path == '/index_cv' or request.path == '/process_uploaded_cv' %}
+    <!-- Placer le bouton "Logout" en haut de toute la page ici -->
+    <a href="logout" class="button" style="position: absolute; top: 0; right: 0; margin: 10px;">Logout</a>
+    {% endif %}
+    {% if request.path == '/process_uploaded_cv' %}
+    <!-- Placer le bouton "Logout" en haut de toute la page ici -->
+    <div class="graph-container">
+        <h2 class="graph-title">Graphique de Similarité</h2>
+        <img src="{{ url_for('static', filename=similarity_image) }}" alt="Graphique de Similarité" class="centered-graph">
+    </div>
+    {% endif %}
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/popper.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
+    <script src="./static/js/main.js"></script>
+</body>
+</html>
