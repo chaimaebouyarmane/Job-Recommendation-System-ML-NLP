@@ -26,7 +26,7 @@ Simple user interface via a Flask web application.
 3. **Model Training:** Execute the model training script with python `training.py`.
 4. **Web Application Launch:** Start the Flask web application with python `app.py`.
 
-    ## Contact :busts_in_silhouette:
+## Contact :busts_in_silhouette:
 Feel free to reach out to us if you have any questions or suggestions:
 
 **Chaimae BOUYARMANE**
